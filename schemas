@@ -1,0 +1,43 @@
+// const Pessoa = mongoose.model('Pessoa',{
+//     nome: String,
+//     tag:String
+//   })
+
+const Leitor = mongoose.model('Leitor',{
+    uuid: Number,
+    tag:String
+})
+
+const Registro = mongoose.model('Registro',{
+    id_pessoa: Number,
+    nm_pessoa:String,
+    id_leitor:String,
+    uuid_leitor:String,
+    nm_leitor:String,
+    dt_registro:Date,
+    hr_registro:Date,
+    corrente:String
+})
+
+const Login = mongoose.model(`Login`,{
+    nome:String,
+    email:String,
+    usuario:String,
+    senha:String,
+    dt_registro:Date,
+    dt_acesso:Date,
+    hr_acesso:Date
+})
+
+
+    nome
+    email
+    senha
+    dt_registro
+    id_pessoa
+    id_leitor
+    tag
+    uuid_leitor
+    nm_leitor
+    hr_registro
+    corrente
