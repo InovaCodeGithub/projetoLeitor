@@ -16,8 +16,9 @@ routes.post(`/login`, SessionController.store)
 // Requisicoes abaixo so funcionarao com o token de autorizacao
 routes.use(authMiddleware)
 
-// EDITAR LOGIN
-routes.put(`/usuario` , LoginController.update)
+
+routes.put(`/usuario` , LoginController.update) // EDITAR LOGIN
+routes.post(`/usuario/check` , LoginController.index) // LISTAS LOGIN
 
 //PESSOA
 routes.get('/pessoa', PessoaController.index) // LISTAR

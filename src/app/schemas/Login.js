@@ -22,7 +22,6 @@ const LoginSchema = new mongoose.Schema(
             type: String,
             unique: true,
             required: true, 
-            select: false,
         },
         dt_registro:{
             type: Date,

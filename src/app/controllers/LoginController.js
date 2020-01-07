@@ -5,6 +5,18 @@ const Login = require('../schemas/Login')
 class LoginController {
     async index(req,res){
 
+        const {usuario, senha} = req.body
+        const login = await Login.findOne({usuario}).select(['-__v'])
+
+        if(!login){
+            return res.status(404).json({error: 'Usuário não encontrado.'})
+        }
+
+        if(!(bcrypt.compare(senha, login.senha))){
+            return res.status(400).json({error: 'Login ou senha inválidos.'})
+        }
+
+        res.send()
     }
 
     async store(req,res){
